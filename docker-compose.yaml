@@ -29,7 +29,7 @@ services:
   nginx:
     restart: always
     depends_on:
-      - php
+      - server
     build:
       context: docker/nginx
       dockerfile: Dockerfile
