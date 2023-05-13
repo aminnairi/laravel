@@ -12,7 +12,7 @@ services:
     volumes:
       - ./mariadb:/var/lib/mysql
 
-  php:
+  server:
     restart: always
     depends_on:
       - mariadb
