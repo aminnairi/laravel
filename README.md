@@ -54,13 +54,13 @@ docker compose exec server npm run build
 docker compose exec server php artisan key:generate
 ```
 
+> *Note: you only need to do this once.*
+
 ## Migration
 
 ```bash
 docker compose exec server php artisan migrate
 ```
-
-> *Note: you only need to do this once.*
 
 ## Endpoints
 
