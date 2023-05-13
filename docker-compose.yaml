@@ -2,6 +2,7 @@ version: "3"
 
 services:
   mariadb:
+    restart: always
     image: mariadb:10.10-jammy
     environment:
       MARIADB_DATABASE: $DB_DATABASE
@@ -11,6 +12,7 @@ services:
       - ./mariadb:/var/lib/mysql
 
   php:
+    restart: always
     depends_on:
       - mariadb
     build:
@@ -24,6 +26,7 @@ services:
       - .:/home/php
 
   nginx:
+    restart: always
     depends_on:
       - php
     build:
