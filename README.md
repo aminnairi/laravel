@@ -67,6 +67,7 @@ docker compose exec server php artisan migrate
 Endpoint | Description
 ---|---
 [`localhost:8000`](http://localhost:8000) | Web server
+[`localhost:8080`](http://localhost:8080) | PHPMyAdmin server
 
 ## Docker Compose Shutdown
 
