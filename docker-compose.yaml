@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  mariadb:
+    image: mariadb:10.10-jammy
+    environment:
+      MARIADB_DATABASE: $DB_DATABASE
+      MARIADB_USER: $DB_USERNAME
+      $MARIADB_PASSWORD: $DB_PASSWORD
+    volumes:
+      - ./mariadb:/var/lib/mysql
+
+  php:
+    depends_on:
+      - mariadb
+    build:
+      context: docker/php
+      dockerfile: Dockerfile
+    user: php
+    tty: true
+    stdin_open: true
+    working_dir: /home/php
+    volumes:
+      - .:/home/php
+
+  nginx:
+    depends_on:
+      - php
+    build:
+      context: docker/nginx
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    ports:
+      - 80:80
+    volumes:
+      - .:/home/php
