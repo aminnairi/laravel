@@ -3,7 +3,7 @@ server {
 
   server_name _;
 
-  root /home/php/public;
+  root /home/user/public;
 
   index index.php;
 
