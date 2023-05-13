@@ -38,4 +38,5 @@ services:
     ports:
       - 80:80
     volumes:
-      - .:/home/php
+      - ./docker/nginx/templates:/etc/nginx/templates
+      - .:/home/user
