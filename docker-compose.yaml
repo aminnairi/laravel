@@ -40,3 +40,10 @@ services:
     volumes:
       - ./docker/nginx/templates:/etc/nginx/templates
       - .:/home/user
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    environment:
+      PMA_HOST: mariadb
+    ports:
+      - 8080:80
