@@ -17,14 +17,14 @@ services:
     depends_on:
       - mariadb
     build:
-      context: docker/php
+      context: docker/server
       dockerfile: Dockerfile
-    user: php
+    user: user
     tty: true
     stdin_open: true
-    working_dir: /home/php
+    working_dir: /home/user
     volumes:
-      - .:/home/php
+      - .:/home/user
 
   nginx:
     restart: always
