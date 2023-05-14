@@ -1,4 +1,4 @@
-FROM php:8.1.19-fpm-alpine3.18
+FROM php:8.2.6-fpm-alpine3.18
 
 WORKDIR /root
 
